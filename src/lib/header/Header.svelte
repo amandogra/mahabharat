@@ -1,12 +1,15 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import logo from './svelte-logo.svg';
 </script>
 
 <header>
 	<div class="corner">
-		<a href="https://kit.svelte.dev">
-			<img src={logo} alt="SvelteKit" />
+		<a href="/">
+			<span class="a11y">Om</span>
+			<picture>
+      <source srcset= "om_red_light.svg" media="(prefers-color-scheme: dark)" />
+      <img src="om_red_dark.svg"  alt="Om" />
+			</picture>
 		</a>
 	</div>
 

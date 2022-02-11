@@ -1,16 +1,21 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import Header from '$lib/header/Header.svelte';
 	import '../app.css';
 </script>
 
-<Header />
-
+{#if $page.url.pathname !== '/'}
+	<Header />
+{/if}
 <main>
 	<slot />
 </main>
 
 <footer>
-	<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
+	<p>
+		&copy; {new Date().getFullYear()} All rights reserved with
+		<a href="https://amandogra.com">Aman Dogra</a>
+	</p>
 </footer>
 
 <style>
@@ -29,17 +34,18 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		align-items: center;
-		padding: 40px;
+		align-items: flex-start;
+		padding: 2rem 1rem 1rem;
 	}
 
-	footer a {
-		font-weight: bold;
+	footer p {
+		margin: 0;
+		color: var(--nord3);
 	}
 
 	@media (min-width: 480px) {
 		footer {
-			padding: 40px 0;
+			padding: 2rem 1rem 1rem;
 		}
 	}
 </style>

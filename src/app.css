@@ -5,43 +5,86 @@
 		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	--font-mono: 'Fira Mono', monospace;
 	--pure-white: #ffffff;
+	--pure-black: #000;
+	/* following nord colors are created by Arctic Ice Sudio
+   * Copyright (c) 2016-present Arctic Ice Studio <development@arcticicestudio.com>
+   * Copyright (c) 2016-present Sven Greb <development@svengreb.de>
+   *
+   * Project:    Nord
+   * Version:    0.2.0
+   * Repository: https://github.com/arcticicestudio/nord
+   * License:    MIT
+   * References:
+   *   https://www.w3.org/TR/css-variables
+   *   https://www.w3.org/TR/selectors/#root-pseudo
+   *   https://drafts.csswg.org/css-variables
+   *   https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables
+   *   http://warpspire.com/kss
+   *   https://github.com/kss-node/kss-node
+  */
+	--nord0: #2e3440;
+	--nord1: #3b4252;
+	--nord2: #434c5e;
+	--nord3: #4c566a;
+	--nord4: #d8dee9;
+	--nord5: #e5e9f0;
+	--nord6: #eceff4;
+	--nord7: #8fbcbb;
+	--nord8: #88c0d0;
+	--nord9: #81a1c1;
+	--nord10: #5e81ac;
+	--nord11: #bf616a;
+	--nord12: #d08770;
+	--nord13: #ebcb8b;
+	--nord14: #a3be8c;
+	--nord15: #b48ead;
+	/* nord color definitions end here*/
 	--primary-color: #b9c6d2;
 	--secondary-color: #d0dde9;
 	--tertiary-color: #edf0f8;
-	--accent-color: #ff3e00;
-	--heading-color: rgba(0, 0, 0, 0.7);
-	--text-color: #444444;
 	--background-without-opacity: rgba(255, 255, 255, 0.7);
 	--column-width: 42rem;
 	--column-margin-top: 4rem;
+	--bg-color: var(--pure-white);
+	--border-color: var(--nord5); /*var(--pure-black);*/
+	--text-color: var(--pure-black);
+	--heading-color: var(--pure-black); /*var(--nord0);*/
+	--accent-color: rgb(172, 6, 16);
+	--border-size: 2px;
+}
+
+/*Dark mode colors*/
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg-color: var(--nord0);
+		--border-color: var(--nord3);
+		--text-color: var(--nord6);
+		--heading-color: var(--nord13);
+		--accent-color: var(--nord11);
+	}
 }
 
 body {
 	min-height: 100vh;
 	margin: 0;
-	background-color: var(--primary-color);
-	background: linear-gradient(
-		180deg,
-		var(--primary-color) 0%,
-		var(--secondary-color) 10.45%,
-		var(--tertiary-color) 41.35%
-	);
+	background-color: var(--bg-color);
+	/* background: linear-gradient( */
+	/* 180deg, */
+	/* var(--primary-color) 0%, */
+	/* var(--secondary-color) 10.45%, */
+	/* var(--tertiary-color) 41.35% */
+	/* ); */
 }
-
-body::before {
-	content: '';
-	width: 80vw;
-	height: 100vh;
-	position: absolute;
-	top: 0;
-	left: 10vw;
-	z-index: -1;
-	background: radial-gradient(
-		50% 50% at 50% 50%,
-		var(--pure-white) 0%,
-		rgba(255, 255, 255, 0) 100%
-	);
-	opacity: 0.05;
+.a11y {
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	padding: 0;
+	margin: -1px;
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(0px 0px 99.9% 99.9%);
 }
 
 #svelte {
@@ -51,13 +94,12 @@ body::before {
 }
 
 h1,
-h2,
-p {
-	font-weight: 400;
+h2 {
 	color: var(--heading-color);
 }
 
 p {
+	color: var(--text-color);
 	line-height: 1.5;
 }
 
