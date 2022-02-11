@@ -1,0 +1,74 @@
+
+:root {
+  --pure-white: #fff;
+  --pure-black: #000;
+  /* following nord colors are created by Arctic Ice Sudio
+   * Copyright (c) 2016-present Arctic Ice Studio <development@arcticicestudio.com>
+   * Copyright (c) 2016-present Sven Greb <development@svengreb.de>
+   *
+   * Project:    Nord
+   * Version:    0.2.0
+   * Repository: https://github.com/arcticicestudio/nord
+   * License:    MIT
+   * References:
+   *   https://www.w3.org/TR/css-variables
+   *   https://www.w3.org/TR/selectors/#root-pseudo
+   *   https://drafts.csswg.org/css-variables
+   *   https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables
+   *   http://warpspire.com/kss
+   *   https://github.com/kss-node/kss-node
+  */
+  --nord0: #2e3440;
+  --nord1: #3b4252;
+  --nord2: #434c5e;
+  --nord3: #4c566a;
+  --nord4: #d8dee9;
+  --nord5: #e5e9f0;
+  --nord6: #eceff4;
+  --nord7: #8fbcbb;
+  --nord8: #88c0d0;
+  --nord9: #81a1c1;
+  --nord10: #5e81ac;
+  --nord11: #bf616a;
+  --nord12: #d08770;
+  --nord13: #ebcb8b;
+  --nord14: #a3be8c;
+  --nord15: #b48ead;
+  /* nord color definitions end here*/
+  --bg-color: var(--pure-white);
+  --border-color: var(--nord5); /*var(--pure-black);*/
+  --text-color: var(--pure-black);
+  --secondary-color: var(--nord3);
+  --heading-color: var(--pure-black); /*var(--nord0);*/
+  --accent-color: rgb(172, 6, 16);
+  --border-size: 2px;
+  --font-serif: 'Libre Baskerville', serif;
+  --font-sans-serif: Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/*Dark mode colors*/
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: var(--nord0);
+    --border-color: var(--nord3);
+    --text-color: var(--pure-white);
+    --heading-color: var(--nord13);
+    --accent-color: var(--nord11);
+    --secondary-color: var(--nord4);
+  }
+}
+
+
+/* accessibility related classes */
+.a11y {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  padding: 0;
+  margin: -1px;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(0px 0px 99.9% 99.9%);
+}
+

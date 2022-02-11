@@ -1,22 +1,24 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import Header from '$lib/header/Header.svelte';
-	import '../app.css';
+	import '../variables.css';
 </script>
 
 {#if $page.url.pathname !== '/'}
 	<Header />
 {/if}
-<main>
+<main class:home={$page.url.pathname !== '/'}>
 	<slot />
 </main>
 
+{#if $page.url.pathname !== '/'}
 <footer>
 	<p>
 		&copy; {new Date().getFullYear()} All rights reserved with
 		<a href="https://amandogra.com">Aman Dogra</a>
 	</p>
 </footer>
+{/if}
 
 <style>
 	main {
